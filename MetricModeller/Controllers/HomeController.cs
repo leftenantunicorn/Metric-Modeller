@@ -27,7 +27,7 @@ namespace MetricModeller.Controllers
              Oh and cost is in thousands, I think that's everything
             */
             var record = "3,3,3,4,0,1,4,1,2,2,2,3,2,2,2,2,3,3,3,0,3,2,293,1600,25229";
-            var result = ExecutePythonScript("predictor.py","data.csv", record);
+            //var result = ExecutePythonScript("predictor.py","data.csv", record);
             var exampleResult = "{ \"cost\": 419.178, \"months\": 43.09000000000001}";
 
             ViewData["json"] = exampleResult ;
@@ -55,7 +55,7 @@ namespace MetricModeller.Controllers
 
         public string ExecutePythonScript(string fileName, string dataName, params string[] args)
         {
-            var pythonInstallationLocation = @"C:\Users\Erin\Anaconda3\python.exe";
+            var pythonInstallationLocation = @"C:\Users\bradleye\Anaconda3\python.exe";
 
             string result;
             string pathPy = Path.Combine(Directory.GetCurrentDirectory(), @"python\", fileName);
