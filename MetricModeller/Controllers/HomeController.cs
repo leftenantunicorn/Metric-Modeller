@@ -30,11 +30,6 @@ namespace MetricModeller.Controllers
              path and install the python packages for numpy, pandas, sklearn and simple json
              Oh and cost is in thousands, I think that's everything
             */
-            var record = "3,3,3,4,0,1,4,1,2,2,2,3,2,2,2,2,3,3,3,0,3,2,293,1600,25229";
-            //var result = ExecutePythonScript("predictor.py","data.csv", record);
-            var exampleResult = "{ \"cost\": 419.178, \"months\": 43.09000000000001}";
-
-            ViewData["json"] = exampleResult ;
             return View();
         }
 
@@ -56,6 +51,14 @@ namespace MetricModeller.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public string sendInputs(string result)
+        {
+
+            //return ExecutePythonScript("predictor.py", "data.csv", result);
+            return "{\"kloc\" : 100, \"effort\" : 100, \"defects\" : 100,  \"months\" : 100, \"cost\" : 100}";
+        }
+
 
         public string ExecutePythonScript(string fileName, string dataName, params string[] args)
         {

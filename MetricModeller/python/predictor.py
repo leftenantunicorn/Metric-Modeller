@@ -17,7 +17,7 @@ try:
     x_single = [[Decimal(n) for n in sys.argv[2].split(",")]];
 
     # Prepare feature and result sets
-    feature_col_names = ['prec', 'flex', 'resl', 'team', 'pmat', 'rel', 'data', 'cplx', 'ruse', 'docu', 'time', 'stor', 'pvol', 'acap', 'pcap', 'pcon', 'apex', 'plex', 'ltex', 'tool', 'site', 'sched']
+    feature_col_names = ['functionPoint','developerCost','language','prec', 'flex', 'resl', 'team', 'pmat', 'rel', 'data', 'cplx', 'ruse', 'docu', 'time', 'stor', 'pvol', 'acap', 'pcap', 'pcon', 'apex', 'plex', 'ltex', 'tool', 'site', 'sched']
     predicted_class_names = ['kloc', 'effort', 'defects','months','cost']
 
     x = df[feature_col_names].values
@@ -30,8 +30,8 @@ try:
                                                     random_state=4)
 
     # Manipulate bad data
-    fill_0 = Imputer(missing_values=0, strategy="mean", axis=0)
-    x_train = fill_0.fit_transform(x_train)
+    #fill_0 = Imputer(missing_values=0, strategy="mean", axis=0)
+    #x_train = fill_0.fit_transform(x_train)
 
     # Train model
     max_depth = 30
