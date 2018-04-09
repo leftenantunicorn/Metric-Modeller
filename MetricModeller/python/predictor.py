@@ -17,8 +17,8 @@ try:
     x_single = [[Decimal(n) for n in sys.argv[2].split(",")]];
 
     # Prepare feature and result sets
-    feature_col_names = ['prec', 'flex', 'resl', 'team', 'pmat', 'rel', 'data', 'cplx', 'ruse', 'docu', 'time', 'stor', 'pvol', 'acap', 'pcap', 'pcon', 'apex', 'plex', 'ltex', 'tool', 'site', 'sched', 'kloc', 'effort', 'defects']
-    predicted_class_names = ['months','cost']
+    feature_col_names = ['prec', 'flex', 'resl', 'team', 'pmat', 'rel', 'data', 'cplx', 'ruse', 'docu', 'time', 'stor', 'pvol', 'acap', 'pcap', 'pcon', 'apex', 'plex', 'ltex', 'tool', 'site', 'sched']
+    predicted_class_names = ['kloc', 'effort', 'defects','months','cost']
 
     x = df[feature_col_names].values
     y = df[predicted_class_names].values
@@ -39,7 +39,13 @@ try:
     regr_multirf = MultiOutputRegressor(rf)
     regr_multirf.fit(x_train, y_train)
 
-    print(json.dumps({"months" : regr_multirf.predict(x_single)[0][0], "cost" : regr_multirf.predict(x_single)[0][1]}), end="")
+    print(json.dumps({
+        "kloc" : regr_multirf.predict(x_single)[0][0], 
+        "effort" : regr_multirf.predict(x_single)[0][1], 
+        "defects" : regr_multirf.predict(x_single)[0][2], 
+        "months" : regr_multirf.predict(x_single)[0][3], 
+        "cost" : regr_multirf.predict(x_single)[0][4]
+        }), end="")
 
 except Exception as e:
     print ("Unexpected error:", format(e) )
