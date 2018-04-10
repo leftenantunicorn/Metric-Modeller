@@ -2,253 +2,324 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="row">
-    <div>
-        <h2>Application uses</h2>
+    <h2 class="topOfPage">Metric Modeller</h2>
 
-    </div>
-    <form>
-        <fieldset>
-            <legend>Please input or select all of the information for the metric modeller:</legend>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <form>
+                    <fieldset>
+                        <legend>Please input or select all of the information for the metric modeller:</legend>
 
-            <label for="functionPoint">Enter the number of function points: </label>
-            <input type="number" name="functionPoint" id="functionPoint"><br>
+                        <a href="#isaiah" class="btn btn-lg btn-primary">Isaiah</a>
+                        <a href="#liz" class="btn btn-lg btn-primary">Elizabeth</a>
+                        <a href="#erin" class="btn btn-lg btn-primary">Erin</a>
+                        <a href="#misc" class="btn btn-lg btn-primary">Misc.</a>
 
-            <label for="developerCost">Enter the cost per developer: </label>
-            <input type="number" name="developerCost" id="developerCost"><br>
+                        <div class="wrapper" id="isaiah">
+                            <h3>Isaiah's Calculations</h3>
+                            <div class="space">
+                                <label for="functionPoint">Enter the number of function points: </label>
+                                <input type="number" name="functionPoint" id="functionPoint"><br>
+                            </div>
 
-            <label for="language">Select a language: </label>
-            <select name="language" id="language">
-                <option value="1">Volvo</option>
-                <option value="2">Saab</option>
-                <option value="3">Mercedes</option>
-                <option value="4">Audi</option>
-            </select><br>
+                            <div class="space">
+                                <label for="developerCost">Enter the cost per developer: </label>
+                                <input type="number" name="developerCost" id="developerCost"><br>
+                            </div>
 
-            <label for="prec">Select the precedentedness of the solution: </label>
-            <select name="prec" id="prec">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="language">Select a language: </label>
+                                <select name="language" id="language">
+                                    <option value="1">Java</option>
+                                    <option value="2">C</option>
+                                    <option value="3">C#</option>
+                                    <option value="4">JavaScript</option>
+                                </select><br>
+                            </div>
 
-            <label for="flex">Select the Development Flexibility of the solution: </label>
-            <select name="flex" id="flex">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="prec">Select the precedentedness of the solution: </label>
+                                <select name="prec" id="prec">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="resl">Select the Architecture/Risk Resolution of the solution: </label>
-            <select name="resl" id="resl">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="flex">Select the Development Flexibility of the solution: </label>
+                                <select name="flex" id="flex">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="team">Select the team cohesion for the solution: </label>
-            <select name="team" id="team">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="resl">Select the Architecture/Risk Resolution of the solution: </label>
+                                <select name="resl" id="resl">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="pmat">Select the process maturity of the solution: </label>
-            <select name="pmat" id="pmat">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="team">Select the team cohesion for the solution: </label>
+                                <select name="team" id="team">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
+                        </div>
 
-            <label for="rel">Select the reliability of the solution: </label>
-            <select name="rel" id="rel">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                        <div class="wrapper" id="liz">
+                            <h3>Elizabeth's Calculations</h3>
+                            <div class="space">
+                                <label for="pmat">Select the process maturity of the solution: </label>
+                                <select name="pmat" id="pmat">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="data">Select the database size of the solution: </label>
-            <select name="data" id="data">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="rel">Select the reliability of the solution: </label>
+                                <select name="rel" id="rel">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="cplx">Select the complexity of the product: </label>
-            <select name="cplx" id="cplx">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="data">Select the database size of the solution: </label>
+                                <select name="data" id="data">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="ruse">Select the reusability of the solution: </label>
-            <select name="ruse" id="ruse">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="cplx">Select the complexity of the product: </label>
+                                <select name="cplx" id="cplx">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="docu">Select the level of documentation for the solution: </label>
-            <select name="docu" id="docu">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="ruse">Select the reusability of the solution: </label>
+                                <select name="ruse" id="ruse">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="time">Select the urgency of the time constraints for the solution: </label>
-            <select name="time" id="time">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="docu">Select the level of documentation for the solution: </label>
+                                <select name="docu" id="docu">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="stor">Select the level of storage constraints for the solution: </label>
-            <select name="stor" id="stor">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="time">Select the urgency of the time constraints for the solution: </label>
+                                <select name="time" id="time">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
+                        </div>
 
-            <label for="pvol">Select the platform volatility of the solution: </label>
-            <select name="pvol" id="pvol">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                        <div class="wrapper" id="erin">
+                            <h3>Erin's Calculations</h3>
+                            <div class="space">
+                                <label for="stor">Select the level of storage constraints for the solution: </label>
+                                <select name="stor" id="stor">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="acap">Select the capability of the analysts working on the solution: </label>
-            <select name="acap" id="acap">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
 
-            <label for="pcap">Select the capability of the programmers working on the solution: </label>
-            <select name="pcap" id="pcap">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="pvol">Select the platform volatility of the solution: </label>
+                                <select name="pvol" id="pvol">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="pcon">Select the years of experience of the programmers working on the solution: </label>
-            <select name="pcon" id="pcon">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="acap">Select the capability of the analysts working on the solution: </label>
+                                <select name="acap" id="acap">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
+                            <div class="space">
+                                <label for="pcap">Select the capability of the programmers working on the solution: </label>
+                                <select name="pcap" id="pcap">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="apex">Select the level of experience the programmers have with applications: </label>
-            <select name="apex" id="apex">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="pcon">Select the years of experience of the programmers working on the solution: </label>
+                                <select name="pcon" id="pcon">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="plex">Select the level of experience the programmers have with platforms: </label>
-            <select name="plex" id="plex">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="apex">Select the level of experience the programmers have with applications: </label>
+                                <select name="apex" id="apex">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="ltex">Select the level of experience the programmers have with the language and toolset: </label>
-            <select name="ltex" id="ltex">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="plex">Select the level of experience the programmers have with platforms: </label>
+                                <select name="plex" id="plex">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
+                        </div>
 
-            <label for="tool">Select the amount of use of software tools for the solution: </label>
-            <select name="tool" id="tool">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                        <div class="wrapper" id="misc">
+                            <h3>Misc. Calculations</h3>
+                            <div class="space">
+                                <label for="ltex">Select the level of experience the programmers have with the language and toolset: </label>
+                                <select name="ltex" id="ltex">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="site">Select the amount of multisite development for the solution: </label>
-            <select name="site" id="site">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
+                            <div class="space">
+                                <label for="tool">Select the amount of use of software tools for the solution: </label>
+                                <select name="tool" id="tool">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
 
-            <label for="sched">Select the level of necessity for a required development schedule for the solution: </label>
-            <select name="sched" id="sched">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select><br>
-            <input type="submit" value="Calculate" id="submit">
-        </fieldset>
-    </form><br />
-
-    <ul id="results"></ul>
+                            <div class="space">
+                                <label for="site">Select the amount of multisite development for the solution: </label>
+                                <select name="site" id="site">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
+                            <div class="space">
+                                <label for="sched">Select the level of necessity for a required development schedule for the solution: </label>
+                                <select name="sched" id="sched">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select><br>
+                            </div>
+                        </div>
+                        <input type="submit" value="Calculate" id="submit" class="btn btn-lg btn-success">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <ul id="results" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
 
 @section Scripts {
     <script type="text/javascript">
@@ -316,10 +387,10 @@
                     success: function(data) {
                         var json = JSON.parse(data);
                         $("#results").html("");
-                        $("#results").append("<li>Months: " + json.months + "</li>");
-                        $("#results").append("<li>Cost: " + json.cost + "</li>");
-                        $("#results").append("<li>Lines of Code: " + json.cost + "</li>");
-                        $("#results").append("<li>Defects: " + json.defects + "</li>");
+                        $("#results").append("<li class=\"list-group-item\">Months: " + json.months + "</li>");
+                        $("#results").append("<li class=\"list-group-item\">Cost: $" + json.cost + " thousand</li>");
+                        $("#results").append("<li class=\"list-group-item\">Lines of Code: " + json.cost + "</li>");
+                        $("#results").append("<li class=\"list-group-item\">Defects: " + json.defects + "</li>");
                     },
                     error: function(errorMsg) {
                         alert(JSON.stringify(errorMsg));
