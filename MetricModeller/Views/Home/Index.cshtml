@@ -39,30 +39,6 @@
                             </div>
 
                             <div class="space">
-                                <label for="prec">Select the precedentedness of the solution: </label>
-                                <select name="prec" id="prec">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select><br>
-                            </div>
-
-                            <div class="space">
-                                <label for="flex">Select the Development Flexibility of the solution: </label>
-                                <select name="flex" id="flex">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select><br>
-                            </div>
-
-                            <div class="space">
                                 <label for="resl">Select the Architecture/Risk Resolution of the solution: </label>
                                 <select name="resl" id="resl">
                                     <option value="0">0</option>
@@ -85,6 +61,14 @@
                                     <option value="5">5</option>
                                 </select><br>
                             </div>
+                            <a href="#" class="btn btn-lg btn-primary" onclick="isaiahFunction()">Calculate</a>
+
+                            <ul id="isaiahResults" class="list-group">
+                                <li class="list-group-item" id="loc"></li>
+                                <li class="list-group-item" id="time"></li>
+                                <li class="list-group-item" id="cost"></li>
+                            </ul>
+
                         </div>
 
                         <div class="wrapper" id="liz">

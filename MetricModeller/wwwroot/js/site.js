@@ -36,3 +36,51 @@
 //    $("#results").append("<li>Months: " + month.cost + "</li>");
 
 //});
+
+
+//$(document).ready(function () {
+//    $("#isaiahResults").hide();
+//});
+
+function isaiahFunction() {
+
+    var fp = document.getElementById('functionPoint').value;
+    var cst = document.getElementById('developerCost').value;
+    var lng = document.getElementById('language').value;
+    var rsk = document.getElementById('resl').value;
+    var coh = document.getElementById('team').value;
+
+    var multiplier = 1;
+
+    var totalCost = 0;
+    var totalTime = 0;
+    var linesOfCode = 0;
+
+    $("#isaiahResults").fadeIn();
+
+    if (lng == 1) {
+        multiplier = 1.5;
+    } else if (lng == 2) {
+        multiplier = 10.5;
+    } else if (lng == 3) {
+        multiplier = 1.4;
+    } else if (lng == 3) {
+        multiplier = 2.4;
+    } else {
+        multiplier = 1;
+    }
+
+    if (fp != null) {
+        totalCost = fp * cst * multiplier;
+    } else {
+        console.log("Cannot be empty!");
+    }
+
+    linesOfCode = fp * 50 * multiplier;
+
+    totalTime = 25 * rsk * coh;
+
+    $("#loc").html("<strong>Lines of Code: </strong>" + linesOfCode);
+    $("#time").html("<strong>Total Time: </strong>" + totalTime + " working hours");
+    $("#cost").html("<strong>Total Cost:</strong> $" + totalCost);
+}
