@@ -294,6 +294,85 @@
                                 </select><br>
                             </div>
                         </div>
+
+                        <div class="wrapper" id="Houssein">
+                            <h3>Houssein Calculations</h3>
+                            <div class="space">
+                                <label for="housseinFunctionPoint">Enter the number of function points: </label>
+                                <input type="number" value="0" name="housseinFunctionPoint" id="housseinFunctionPoint"><br>
+                            </div>
+                            <div class="space">
+                                <label for="housseinLanguage">Select a language: </label>
+                                <select name="housseinLanguage" id="housseinLanguage">
+                                    <option value="1">Java</option>
+                                    <option value="2">C</option>
+                                    <option value="3">C#</option>
+                                    <option value="4">JavaScript</option>
+                                </select><br>
+                            </div>
+                            <div class="space">
+                                <label for="housseinRel">Select the reliability of the solution: </label>
+                                <select name="housseinRel" id="housseinRel">
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="4">3</option>
+                                    <option value="5">4</option>
+                                    <option value="6">5</option>
+                                </select><br>
+                            </div>
+                            <div class="space">
+                                <label for="housseinComplexity">Select the complexity of the product: </label>
+                                <select name="housseinComplexity" id="housseinComplexity">
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="4">3</option>
+                                    <option value="5">4</option>
+                                    <option value="6">5</option>
+                                </select><br>
+                            </div>
+                            <div class="space">
+                                <label for="housseinCapa">Select the capability of the programmers working on the solution: </label>
+                                <select name="housseinCapa" id="housseinCapa">
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="4">3</option>
+                                    <option value="5">4</option>
+                                    <option value="6">5</option>
+                                </select><br>
+                            </div>
+
+                            <div class="space">
+                                <label for="housseingExpProgrammers">Select the years of experience of the programmers working on the solution: </label>
+                                <select name="housseingExpSolution" id="housseingExpSolution">
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="4">3</option>
+                                    <option value="5">4</option>
+                                    <option value="6">5</option>
+                                </select><br>
+                            </div>
+
+                            <div class="space">
+                                <label for="housseinExpPlatforms">Select the level of experience the programmers have with platforms: </label>
+                                <select name="housseinExpPlatforms" id="housseinExpPlatforms">
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="4">3</option>
+                                    <option value="5">4</option>
+                                    <option value="6">5</option>
+                                </select><br>
+                            </div>
+
+                            <div class="space">
+                                <h3>Houssein Results:</h3>
+                                <div id="houssein"></div>
+                            </div>
+                        </div>
                         <input type="submit" value="Calculate" id="submit" class="btn btn-lg btn-success">
                     </fieldset>
                 </form>
@@ -375,6 +454,33 @@
                         $("#results").append("<li class=\"list-group-item\">Cost: $" + json.cost + " thousand</li>");
                         $("#results").append("<li class=\"list-group-item\">Lines of Code: " + json.cost + "</li>");
                         $("#results").append("<li class=\"list-group-item\">Defects: " + json.defects + "</li>");
+                    },
+                    error: function(errorMsg) {
+                        alert(JSON.stringify(errorMsg));
+                    }
+                });
+
+                var housseinAnswers =
+                    `{
+                    "functionPoints": ${$('#housseinFunctionPoint').val()},
+                    "language": ${$('#housseinLanguage').val()},
+                    "reliabilityOfSolution": ${$('#housseinRel').val()},
+                    "complexityOfSolution": ${$('#housseinComplexity').val()},
+                    "capabilityOfProgrammers": ${$('#housseinCapa').val()},
+                    "experienceOfProgrammers": ${$('#housseingExpSolution').val()},
+                    "experienceOfProgrammersOnPlatforms": ${$('#housseinExpPlatforms').val()}
+                }`;
+
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("houssein", "Home")',
+                    data: { 'result': housseinAnswers },
+                    success: function(data) {
+                        var json = JSON.parse(data);
+                        $("#houssein").html("");
+                        $("#houssein").append("<li class=\"list-group-item\">Months: " + json.length + "</li>");
+                        $("#houssein").append("<li class=\"list-group-item\">Cost: $" + json.cost + "</li>");
+                        $("#houssein").append("<li class=\"list-group-item\">Lines of Code: " + json.kloc + "</li>");
                     },
                     error: function(errorMsg) {
                         alert(JSON.stringify(errorMsg));

@@ -7,9 +7,21 @@ using Microsoft.AspNetCore.Mvc;
 using MetricModeller.Models;
 using System.IO;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace MetricModeller.Controllers
 {
+    public class housseinObj
+    {
+        public int functionPoints { get; set; }
+        public int language { get; set; }
+        public int reliabilityOfSolution { get; set; }
+        public int complexityOfSolution { get; set; }
+        public int capabilityOfProgrammers { get; set; }
+        public int experienceOfProgrammers { get; set; }
+        public int experienceOfProgrammersOnPlatforms { get; set; }
+    }
+
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -59,6 +71,37 @@ namespace MetricModeller.Controllers
             return "{\"kloc\" : 100, \"effort\" : 100, \"defects\" : 100,  \"months\" : 100, \"cost\" : 100}";
         }
 
+        public string houssein(string result)
+        {
+            var model = JsonConvert.DeserializeObject<housseinObj>(result);
+
+            double languageFactor = 0;
+            switch (model.language)
+            {
+                case 1:
+                    languageFactor = 53;
+                    break;
+                case 2:
+                    languageFactor = 97;
+                    break;
+                case 3:
+                    languageFactor = 54;
+                    break;
+                case 4:
+                    languageFactor = 47;
+                    break;
+
+                default:
+                    break;
+            }
+
+
+            var length = (languageFactor * model.reliabilityOfSolution * model.complexityOfSolution) / ((model.capabilityOfProgrammers + model.experienceOfProgrammers * model.experienceOfProgrammersOnPlatforms) * 2);
+            var cost = length * (model.functionPoints * model.functionPoints);
+            var loc = languageFactor * model.functionPoints;
+
+            return $"{{\"kloc\" : {loc}, \"length\" : {length}, \"cost\" : {cost}}}";
+        }
 
         public string ExecutePythonScript(string fileName, string dataName, params string[] args)
         {
